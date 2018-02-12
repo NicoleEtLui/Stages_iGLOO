@@ -37,6 +37,108 @@ Stack client side:
             <a href="/" class="button button--secondary button--sm">Voir le produit</a>
           </div>
         </div>
+
+ ...
+
+ // =============================================================================
+// Products
+// =============================================================================
+
+/* Deps
+   ========================================================================== */
+@import 'variables';
+@import 'utils/mixins';
+
+
+/* Styles
+   ========================================================================== */
+.section-products {
+  .section-products__list { lost-column: 9/12; 
+  
+    .section-products__list__cards__item {
+      lost-column: 1/3;
+      border: solid 1px #EAEAEA;
+      border-radius: 3px;
+      margin-bottom: 30px;    
+      overflow: hidden;  
+    }
+  }
+
+  .section-products__form { lost-column: 3/12; }
+}
+
+.section-products__list__header {
+  margin-bottom: 60px;
+
+  .section-products__list__header__title { color: $color-brand; }
+
+  .section-products__list__header__results { color: $color-dark-lt; }
+}
+
+.section-products__list__cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section-products__list__cards__item--top { 
+  border-bottom: solid 1px #EAEAEA;
+  height: 200px;
+  background: url("./assets/image_medium.png") center/contain no-repeat;
+  position: relative;
+
+  > img {
+    margin-bottom: 35px;
+    margin: 0 auto 35px auto;
+  }
+
+}
+
+.section-products__list__cards__item--info {
+  text-align: center;
+  padding: 20px 0 20px 0;
+
+  
+}
+
+.section-products__list__cards__item--info--title {
+  @include font-size(16px);
+  font-weight: 700;
+  color: $color-brand;
+} 
+
+.section-products__list__cards__item--info--subtitle {
+  @include font-size(14px);
+  font-weight: lighter;
+  color: $color-dark-lt;
+  margin: 5px 0 20px 0;
+}
+
+// .promo{
+//   position: absolute;
+//   width: 50px;
+// 	height: 50px;
+//   background: $color-secondary;
+//   color: white;
+//   @include font-size(12px);
+//   transform: rotate(-45deg);
+// }
+
+.promo{
+  position: absolute;
+  width: 0;
+	height: 0;
+	border-top: 100px solid $color-secondary;
+  border-right: 100px solid transparent;
+  z-index: -1;
+  top: 0;
+  left: 0;
+
+  .promo--text{
+    color: white;  
+    @include font-size(12px);
+    transform: rotate(-45deg);
+  }
+}
 ```
 
 #### Problèmes 
@@ -44,7 +146,7 @@ Stack client side:
 * shape in css, triangle sur base a tourner par après
 * texte bien placé
 * ...
- 
+
 
 ### Links
 * https://sass-lang.com/guide
