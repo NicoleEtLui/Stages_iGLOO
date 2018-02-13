@@ -56,3 +56,5 @@ Stack client side:
 * https://developer.mozilla.org/fr/docs/Web/CSS/::before
 * https://developer.mozilla.org/fr/docs/Web/CSS/::after
 * http://nicolasgallagher.com/an-introduction-to-css-pseudo-element-hacks/
+* https://support.google.com/chrome/answer/157179?hl=fr
+* https://codemyui.com/tag/button/page/5/
