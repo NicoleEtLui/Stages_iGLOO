@@ -58,3 +58,63 @@ Stack client side:
 * http://nicolasgallagher.com/an-introduction-to-css-pseudo-element-hacks/
 * https://support.google.com/chrome/answer/157179?hl=fr
 * https://codemyui.com/tag/button/page/5/
+
+#NOtes Stages - 13-02-2018
+
+## Magazine
+### Add a page webpack 
+```
+page.js
+...
+export const title = 'Webpack Boilerplate'
+
+export const pages = [
+  {
+    title: title,
+    publicPath: 'index.html',
+    page: 'home.html'
+  },
+  {
+    title: 'Products',
+    publicPath: 'products.html',
+    page: 'products.html'
+  },
+  {
+    title: 'Magazine',
+    publicPath: 'magazine.html',
+    page: 'magazine.html'
+  }
+]
+```
+### Add icon 
+We create  a font composde by icon so we can use icon as text
+`<i class="icon icon-bag-big"></i>`
+### Links
+* https://useiconic.com/open/
+* https://getbootstrap.com/docs/4.0/extend/icons/
+
+# Notes Stages - 15-02-2018
+* http://www.topdesignagencies.com/nth-test/
+* https://include-media.com/
+* http://kenwheeler.github.io/slick/
+
+## Done
+* magazine list cards big and small done
+* responsive version for magazine list cards 
+* brief for next page: about -- start
+
+## WIP
+### About.html
+
+* To use a js file (see example in panel-food with index.js)
+  * create it in about
+  * in the file import slick
+  * export the function for it to be used elsewhere 
+  `export default function () {`
+  * import the file in main.js
+  * use the function created
+
+* SLICK - cool slideralready done
+  * find a way to put template (own html) in it 
+
+
