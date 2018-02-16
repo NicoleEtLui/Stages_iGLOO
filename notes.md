@@ -124,4 +124,7 @@ We create  a font composde by icon so we can use icon as text
 * gérer le stle de la timeline dans le slider de about
 * la page est full static donc au final on doit avoir un array d'objet (date, label) sur lequel on boucle et avec laquelle on remplit la timeline ET les slides. La funciton de bouclage se trouvera dans customPaging de slick (index.js).
 * a terme cet array se trouvera dans nu fichier json par exemple et on viendra y chercher tout ce dont on a besoin.
-* check .data() jquery 
+* check .data() jquery
+
+* https://projects.invisionapp.com/d/main/default/#/console/9945455/269996300/inspect
+*  
