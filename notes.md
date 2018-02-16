@@ -117,4 +117,11 @@ We create  a font composde by icon so we can use icon as text
 * SLICK - cool slideralready done
   * find a way to put template (own html) in it 
 
+# Notes Stages - 16-02-2018
+* https://jsfiddle.net/kirana/b5bqk68j/
 
+### TODO 16:02
+* gérer le stle de la timeline dans le slider de about
+* la page est full static donc au final on doit avoir un array d'objet (date, label) sur lequel on boucle et avec laquelle on remplit la timeline ET les slides. La funciton de bouclage se trouvera dans customPaging de slick (index.js).
+* a terme cet array se trouvera dans nu fichier json par exemple et on viendra y chercher tout ce dont on a besoin.
+* check .data() jquery 
