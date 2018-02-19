@@ -1,4 +1,14 @@
-#NOtes Stages - 12-02-2018
+Outils :
+* mail (mail.igloo.be)
+* slack
+* gitlab gitlab.igloo.be
+* invision https://projects.invisionapp.com/d/main/default/#/console/9945455/269996300/inspect
+* sourcetree
+* teamwork https://igloowebstudio.teamworkpm.net/index.cfm#projects/48083/tasks + teamwork timer
+
+
+
+# Notes Stages - 12-02-2018
 
 ## Projects
 ### RCBE
@@ -46,7 +56,7 @@ Stack client side:
 * http://lostgrid.org/docs.html
 * https://www.w3schools.com/cssref/pr_pos_z-index.asp
 
-#NOtes Stages - 13-02-2018
+# Notes Stages - 13-02-2018
 
 ### Links
 * https://codepen.io/search/pens?q=hover+animation&limit=all&type=type-pens
@@ -59,7 +69,7 @@ Stack client side:
 * https://support.google.com/chrome/answer/157179?hl=fr
 * https://codemyui.com/tag/button/page/5/
 
-#NOtes Stages - 13-02-2018
+# Notes Stages - 13-02-2018
 
 ## Magazine
 ### Add a page webpack 
@@ -128,3 +138,21 @@ We create  a font composde by icon so we can use icon as text
 
 * https://projects.invisionapp.com/d/main/default/#/console/9945455/269996300/inspect
 *  
+
+# WEEK 2
+## 19-02-2018
+* Tout faire pour éviter l'utilistation d'image si on peut
+  * css pour les formes
+  * ::before et ::after sur des éléments
+  * ...
+* Ne jamais se satisfaire d'un "bug", l'objectif = pixel perfect (sans être nazi) et surtout l'objectif est d'être satisfait de ce qui se passe a l'écran, si on est pas satisfait l'utilisateur ne le sera pas. Ne pas se dire "l'utilisateur ne le verra pas".
+* Ne pas oublier d'importer le css quand on installe un plug-in (#slick)
+* Essayer de ne pas rajouter de markup inutile (genre une div supplémentaire pour qu'un enfant se comporte comme un block) 
+
+### Commandes utiles
+* `flex-shrink:0` = tu ne peux pas être plus petit que ce que tu est
+
+### Links
+* https://developer.mozilla.org/fr/docs/Web/CSS/Animations_CSS
+* https://developer.mozilla.org/fr/docs/Web/CSS/animation
+* https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Transitions/Utiliser_transitions_CSS
