@@ -148,6 +148,7 @@ We create  a font composde by icon so we can use icon as text
 * Ne jamais se satisfaire d'un "bug", l'objectif = pixel perfect (sans être nazi) et surtout l'objectif est d'être satisfait de ce qui se passe a l'écran, si on est pas satisfait l'utilisateur ne le sera pas. Ne pas se dire "l'utilisateur ne le verra pas".
 * Ne pas oublier d'importer le css quand on installe un plug-in (#slick)
 * Essayer de ne pas rajouter de markup inutile (genre une div supplémentaire pour qu'un enfant se comporte comme un block) 
+* Pensertouojurs a plus tard
 
 ### Commandes utiles
 * `flex-shrink:0` = tu ne peux pas être plus petit que ce que tu est
@@ -156,3 +157,7 @@ We create  a font composde by icon so we can use icon as text
 * https://developer.mozilla.org/fr/docs/Web/CSS/Animations_CSS
 * https://developer.mozilla.org/fr/docs/Web/CSS/animation
 * https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Transitions/Utiliser_transitions_CSS
+
+## 20-02-2018
+### Bonnes pratiques
+* `flex : 1 0 auto` permet de gérer la compatibilité avec ie plutot que `flex: 1` tout court 
