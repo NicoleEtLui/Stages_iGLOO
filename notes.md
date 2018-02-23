@@ -161,3 +161,62 @@ We create  a font composde by icon so we can use icon as text
 ## 20-02-2018
 ### Bonnes pratiques
 * `flex : 1 0 auto` permet de gérer la compatibilité avec ie plutot que `flex: 1` tout court 
+
+
+* Discussion avec antoine : Le but est de m'intégrer à la boite à travers le front-end (plus de sensibilité a ça vu mon parcours et aussi simplement de par mes envies), et peut-être par la suite de me faie bosser sur du back-end. L'idée est de trouver le bon projet/moment. Proposition est de venir discuter à un moment d emon tfe avec eux afin qu'ils puissent à ce moment là se faire une idée de mon niveau et de où ils pourraient m'intégrer par la suite. 
+
+## 21-02-2018
+
+### Résumé jusqu'ici : 
+* arriver dans la boite directmeent intégré en tant qu'employé (j'apparais des les premieres minutes sur le board des stands up meetings journalier qui débute la journée). Une fois mon setup fait (installé plusieurs programmes demandé par Loic (chef technique)(voir notes premier jour)), je suis assigné sur le projet en cours de la refonte du site royal-canin.be coté au coté de Gauthier coté front-end. Nous nous occupons du slicing du site en fichier html/css/js à partir du design fait (sketch/invision) par tiffany (designer). Je suis la pour l'instant pour alléger gauthier en front-end. 
+=> techno utilisée (cfr chaque jour)
+  
+ 
+### vs code
+pom + shift + L = select all ocurences that match selection
+pom + d = select next occurences of the selection
+* https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-postcss-sorting
+  * pom + shift + ctrl + S (pour sorting), sur une selection
+
+### Links
+
+* https://developer.mozilla.org/fr/docs/Web/API/Window/matchMedia //media query with js
+* https://www.alsacreations.com/article/lire/1500-matchmedia-javascript-media-queries.html
+
+## 22-02-2018
+
+### links
+* https://jsfiddle.net/8moenfqt/7/ interagir avec du svg => html, scss, js 
+* https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout
+* https://infopython.wordpress.com/2007/08/28/mac-keyboard-shortcuts-how-write-a-pipe-or-backslash-on-macbook/
+* check map svg https://www.youtube.com/watch?v=UZs8l50gxjU
+* https://www.sharethis.com/
+* https://developer.mozilla.org/fr/docs/Web/SVG/Element/g // '<g>' pour le svg 
+* https://developer.mozilla.org/fr/docs/Web/SVG
+* https://developer.mozilla.org/fr/docs/Web/SVG/Element/svg
+
+### rappel 
+* $( "a[hreflang|='en']" ).css( "border", "3px dotted green" );
+  * $('.txt-region-1').addClass('blue'); // access to links
+  * $("g[data-class|='txt-region-1']").css("transform", "scale(1.2)"); // access to a special property
+* $( "td" ).hover(
+  function() {
+    $( this ).addClass( "hover" ); // mouseenter
+  }, function() {
+    $( this ).removeClass( "hover" ); // mouseleave
+  }
+);
+
+## 23-02-2018
+* https://css-tricks.com/cascading-svg-fill-color/
+* https://css-tricks.com/scale-svg/
+
+* https://github.com/feross
+* chec airbnb github ( tres actif dans la communauté js
+* http://api.jquery.com/filter/
+* https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/match
+* https://api.jquery.com/attribute-contains-selector/ !!!!!!!!!!!!!!!! trop bien 
+RTFM bordeeeeeel
+
+### Lint convention
+* check lint standard js (écrite par feross), chec airbnb github ( tres actif dans la communauté js)
