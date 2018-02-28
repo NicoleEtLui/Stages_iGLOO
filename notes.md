@@ -13,16 +13,16 @@ Outils :
 ## Projects
 ### RCBE
 Stack client side:
-    * SASS 
+    * SASS
     * Webpack
 
-### Flexbox 
+### Flexbox
 ```
 <div class="c">
   <h1 class="t">Les produits</h1>
   <div class="f">45 produits</div>
   <div class="f">45 produits</div>
-  
+
   <div class="f">45 produits</div>
 </div>
 ...
@@ -36,7 +36,7 @@ Stack client side:
 ```
 
 
-#### Problèmes 
+#### Problèmes
 * bandeau sous l'image (background )
 * shape in css, triangle sur base a tourner par après
 * texte bien placé
@@ -72,7 +72,7 @@ Stack client side:
 # Notes Stages - 13-02-2018
 
 ## Magazine
-### Add a page webpack 
+### Add a page webpack
 ```
 page.js
 ...
@@ -96,7 +96,7 @@ export const pages = [
   }
 ]
 ```
-### Add icon 
+### Add icon
 We create  a font composde by icon so we can use icon as text
 `<i class="icon icon-bag-big"></i>`
 ### Links
@@ -110,7 +110,7 @@ We create  a font composde by icon so we can use icon as text
 
 ## Done
 * magazine list cards big and small done
-* responsive version for magazine list cards 
+* responsive version for magazine list cards
 * brief for next page: about -- start
 
 ## WIP
@@ -119,13 +119,13 @@ We create  a font composde by icon so we can use icon as text
 * To use a js file (see example in panel-food with index.js)
   * create it in about
   * in the file import slick
-  * export the function for it to be used elsewhere 
+  * export the function for it to be used elsewhere
   `export default function () {`
   * import the file in main.js
   * use the function created
 
 * SLICK - cool slideralready done
-  * find a way to put template (own html) in it 
+  * find a way to put template (own html) in it
 
 # Notes Stages - 16-02-2018
 * https://jsfiddle.net/kirana/b5bqk68j/
@@ -137,7 +137,7 @@ We create  a font composde by icon so we can use icon as text
 * check .data() jquery
 
 * https://projects.invisionapp.com/d/main/default/#/console/9945455/269996300/inspect
-*  
+*
 
 # WEEK 2
 ## 19-02-2018
@@ -147,7 +147,7 @@ We create  a font composde by icon so we can use icon as text
   * ...
 * Ne jamais se satisfaire d'un "bug", l'objectif = pixel perfect (sans être nazi) et surtout l'objectif est d'être satisfait de ce qui se passe a l'écran, si on est pas satisfait l'utilisateur ne le sera pas. Ne pas se dire "l'utilisateur ne le verra pas".
 * Ne pas oublier d'importer le css quand on installe un plug-in (#slick)
-* Essayer de ne pas rajouter de markup inutile (genre une div supplémentaire pour qu'un enfant se comporte comme un block) 
+* Essayer de ne pas rajouter de markup inutile (genre une div supplémentaire pour qu'un enfant se comporte comme un block)
 * Pensertouojurs a plus tard
 
 ### Commandes utiles
@@ -160,18 +160,18 @@ We create  a font composde by icon so we can use icon as text
 
 ## 20-02-2018
 ### Bonnes pratiques
-* `flex : 1 0 auto` permet de gérer la compatibilité avec ie plutot que `flex: 1` tout court 
+* `flex : 1 0 auto` permet de gérer la compatibilité avec ie plutot que `flex: 1` tout court
 
 
-* Discussion avec antoine : Le but est de m'intégrer à la boite à travers le front-end (plus de sensibilité a ça vu mon parcours et aussi simplement de par mes envies), et peut-être par la suite de me faie bosser sur du back-end. L'idée est de trouver le bon projet/moment. Proposition est de venir discuter à un moment d emon tfe avec eux afin qu'ils puissent à ce moment là se faire une idée de mon niveau et de où ils pourraient m'intégrer par la suite. 
+* Discussion avec antoine : Le but est de m'intégrer à la boite à travers le front-end (plus de sensibilité a ça vu mon parcours et aussi simplement de par mes envies), et peut-être par la suite de me faie bosser sur du back-end. L'idée est de trouver le bon projet/moment. Proposition est de venir discuter à un moment d emon tfe avec eux afin qu'ils puissent à ce moment là se faire une idée de mon niveau et de où ils pourraient m'intégrer par la suite.
 
 ## 21-02-2018
 
-### Résumé jusqu'ici : 
-* arriver dans la boite directmeent intégré en tant qu'employé (j'apparais des les premieres minutes sur le board des stands up meetings journalier qui débute la journée). Une fois mon setup fait (installé plusieurs programmes demandé par Loic (chef technique)(voir notes premier jour)), je suis assigné sur le projet en cours de la refonte du site royal-canin.be coté au coté de Gauthier coté front-end. Nous nous occupons du slicing du site en fichier html/css/js à partir du design fait (sketch/invision) par tiffany (designer). Je suis la pour l'instant pour alléger gauthier en front-end. 
+### Résumé jusqu'ici :
+* arriver dans la boite directmeent intégré en tant qu'employé (j'apparais des les premieres minutes sur le board des stands up meetings journalier qui débute la journée). Une fois mon setup fait (installé plusieurs programmes demandé par Loic (chef technique)(voir notes premier jour)), je suis assigné sur le projet en cours de la refonte du site royal-canin.be coté au coté de Gauthier coté front-end. Nous nous occupons du slicing du site en fichier html/css/js à partir du design fait (sketch/invision) par tiffany (designer). Je suis la pour l'instant pour alléger gauthier en front-end.
 => techno utilisée (cfr chaque jour)
-  
- 
+
+
 ### vs code
 pom + shift + L = select all ocurences that match selection
 pom + d = select next occurences of the selection
@@ -186,16 +186,16 @@ pom + d = select next occurences of the selection
 ## 22-02-2018
 
 ### links
-* https://jsfiddle.net/8moenfqt/7/ interagir avec du svg => html, scss, js 
+* https://jsfiddle.net/8moenfqt/7/ interagir avec du svg => html, scss, js
 * https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout
 * https://infopython.wordpress.com/2007/08/28/mac-keyboard-shortcuts-how-write-a-pipe-or-backslash-on-macbook/
 * check map svg https://www.youtube.com/watch?v=UZs8l50gxjU
 * https://www.sharethis.com/
-* https://developer.mozilla.org/fr/docs/Web/SVG/Element/g // '<g>' pour le svg 
+* https://developer.mozilla.org/fr/docs/Web/SVG/Element/g // '<g>' pour le svg
 * https://developer.mozilla.org/fr/docs/Web/SVG
 * https://developer.mozilla.org/fr/docs/Web/SVG/Element/svg
 
-### rappel 
+### rappel
 * $( "a[hreflang|='en']" ).css( "border", "3px dotted green" );
   * $('.txt-region-1').addClass('blue'); // access to links
   * $("g[data-class|='txt-region-1']").css("transform", "scale(1.2)"); // access to a special property
@@ -215,8 +215,120 @@ pom + d = select next occurences of the selection
 * chec airbnb github ( tres actif dans la communauté js
 * http://api.jquery.com/filter/
 * https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/String/match
-* https://api.jquery.com/attribute-contains-selector/ !!!!!!!!!!!!!!!! trop bien 
+* https://api.jquery.com/attribute-contains-selector/ !!!!!!!!!!!!!!!! trop bien
 RTFM bordeeeeeel
 
 ### Lint convention
 * check lint standard js (écrite par feross), chec airbnb github ( tres actif dans la communauté js)
+
+
+---------------------------------------------------------------------------------------------------
+SEMAINE 3
+---------------------------------------------------------------------------------------------------
+
+## 25-02-2018
+* Brief BI
+* Intro REACT w/ gauthier
+
+### Links
+* https://storybook.js.org/
+* https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation
+* http://blueprintjs.com/docs/v1/
+* https://lodash.com/
+* https://dmitripavlutin.com/how-three-dots-changed-javascript/
+### Tech
+* yarn
+* styled components
+* react-styled-flexboxgrid
+* react-inspector
+*
+
+## 26-02-2018
+
+### Links
+* https://github.com/jakob101/RelativePath prachtig
+* https://reactjs.org/docs/introducing-jsx.html
+
+### REACT
+* Dans le fichier Element.js = sorte de constructeur de l'element, quand on l'instencie autre part grace au <Element>, c'est la qu'on lui passe les props qui seront gérées dans le constructeur
+
+ex:
+
+```
+//Button.js
+const Button = ({ iconName, children }) => (
+  <ButtonStyled iconName={iconName}>
+    { children }
+    { iconName && <span className='icon'><Icon icon={iconName} /></span> }
+  </ButtonStyled>
+)
+
+export default Button
+...
+//MainLayout.sj
+<Button iconName='more'>Vasqd qsd qsd qsd qd qslider</Button>
+...
+```
+
+* {children} indique l'emplacement ou sera printer ce qui a l"intérieur du tag créé, ici, entre
+<Button> et </Button>
+
+* on peut renvoyer un component de facon conditionnelle en fonciton des props, ici, si to ou href est vrai on renvoie au component ButtonLink, sinon on reovie au component ButtonStandard
+````
+const getComponentFromProps = ({ to, href }) => to || href ? ButtonLink : ButtonStandard
+
+````
+
+## 27-02-2018
+
+* cfr [button in react](./react_commented_button.js)
+
+* react c'est aps si compliqué ... mais bon
+* react-router = une des routeur react qui existe et ça marche bien
+* => arrows = return implicite donc pas de return explicite
+
+* ~ = `alt + n`
+* vscode jump end begin of line `pom + lef/right arrow`
+* https://www.webpagefx.com/blog/web-design/background-css-shorthand/
+
+## Git
+On peut faire une merge request sur un travail en cours !
+  * push sur la branche distante ( en CLI ) ,l'avantage est que la CLI fournit le lien
+  pour créer la merge request
+  ```
+    iMac-de-iGLOO:customer-platform igloo$ git push origin feature/PageNotFound
+    Counting objects: 14, done.
+    Delta compression using up to 4 threads.
+    Compressing objects: 100% (14/14), done.
+    Writing objects: 100% (14/14), 533.95 KiB | 23.21 MiB/s, done.
+    Total 14 (delta 5), reused 0 (delta 0)
+    remote:
+    remote: To create a merge request for feature/PageNotFound, visit:
+    remote:   https://gitlab.igloo.be/boehringer/customer-platform/merge_requests/new?merge_request%5Bsource_branch%5D=feature%2FPageNotFound
+    remote:
+    To gitlab.igloo.be:boehringer/customer-platform.git
+    * [new branch]      feature/PageNotFound -> feature/PageNotFound
+    iMac-de-iGLOO:customer-platform igloo$
+  ```
+  * on va sur ce lien et on crée la merge request en mettant le tag (WIP), ainsi
+  cette branche ne PEUT pas être merge tant que le tag est la mais on profite des
+  test et du pipeline
+## Task
+* finished button components, change html tag depend on props passed to the element
+cfr [button in react](./react_commented_button.js)
+
+### TD
+  * make the 404 page \/
+  * add button where they must
+  * Add traduction https://github.com/yahoo/react-intl
+
+## Dotfiles
+* facond de gérer ses "dotfiles" plus facilement sous forme d'une dir clean a la racine,
+les dotfiles étant un moyen de gérer la config de différents programmes
+* zsh = bash like, oh-my zsh = gestionnaire de plug-in
+* zshrc ?  ? ? ?
+* z = jumper, jump to a dossier facillement
+* https://github.com/LoicMahieu/dotfiles
+* https://github.com/thoughtbot/rcm
+* https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins
+* https://github.com/zsh-users/antigen
