@@ -332,3 +332,18 @@ les dotfiles étant un moyen de gérer la config de différents programmes
 * https://github.com/thoughtbot/rcm
 * https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins
 * https://github.com/zsh-users/antigen
+
+## 01-03-2018
+* https://github.com/stylelint/stylelint
+* https://standardjs.com/
+
+### Links
+  * mail templating, mettre en page les emails https://mjml.io/
+  * launch a simple web server at any time http://get-serve.com/documentation/usage,
+  for example with mjml, to serve the image
+  * http://iamvdo.me/conf/kiwiparty-2015 font icon vs sprite
+  * https://github.com/morajabi/styled-media-query include media for react
+  * <meta name="viewport" content="width=device-width, initial-scale=1.0">,
+  https://developers.google.com/web/fundamentals/design-and-ux/responsive/?hl=fr
+  * https://github.com/nfl/react-helmet
+
