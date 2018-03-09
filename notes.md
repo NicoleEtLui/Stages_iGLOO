@@ -347,3 +347,125 @@ les dotfiles étant un moyen de gérer la config de différents programmes
   https://developers.google.com/web/fundamentals/design-and-ux/responsive/?hl=fr
   * https://github.com/nfl/react-helmet
 
+
+---------------------------------------------------------------------------------------------------
+SEMAINE 4
+---------------------------------------------------------------------------------------------------
+* align-items permet d'éviter qu'un élément ne se stretch sur la un seul coté (notamment), a permis de régler le problème d'écrsement de l'image sur la largeur seulement dans homepage - websites
+* lost-column: 1 1; préciser quand il doit passer a la ligne permet d'éviter la marge a droite
+
+## 06-03-2018
+
+* inline-flex sur un parent lui fait prendre la width de ses enfants ( atetntion a ne pas laissr trainer un width 100% du coup ... lol)
+* margin-top auto permet de pousser un élément en bas, etc...
+
+## Links
+* http://www.colorzilla.com/gradient-editor/
+* https://stackoverflow.com/questions/9476923/css3-animate-border-color
+* https://css-tricks.com/NetMag/FluidWidthVideo/Article-FluidWidthVideo.php
+
+## Events
+* aujourd'hui l'internet c'est de la daube ... sans internet on se retrouve vite useless c'est chiant d'attendre que l'internet revienne ... 
+
+## 07-03-2018
+
+* coupure d'eau au CEI ! :D 
+
+## TD 
+* tabs responsive en fonciton de si l'élément est overflow( => scroll) ou pas ! js/jquery et css
+  * le problelem est que le .resize est pas fou ... le calcul savoir si la scroll bar est présente
+  fait cliper entre true et false, de plus quand on fait disparaire le dernier élément de la liste du coup la scrollbar disparait et donc le dernier élément va réapparaitre ... c'est la mer noire ...
+  * le problèm est qu'on peut pas juste display none les éléments car alors on ne sais pas quand on peut les faire réapparaitre car on ne sais quand on a de nouveau la place ... 
+  * connaitre la somme totale des éléments du menu ?? 
+  * https://jsfiddle.net/twvr5jsL/74/ first tests 
+  * https://developer.mozilla.org/fr/docs/Web/API/Element/clientWidth
+  * https://api.jquery.com/clone/
+  * https://developer.mozilla.org/en-US/docs/Web/Events/overflow  fonctionne pas du totu ....
+
+  ```
+  jQuery.fn.hasScrollBar = function()
+{
+ return $(this)[0].scrollWidth >= $(this).innerWidth();
+ 
+}
+
+$( window ).resize(function() {
+ $('.list').hasScrollBar() ? 
+  $('.list .list-item:last-child').addClass('overflow'):
+  $('.list .list-item:last-child').removeClass('overflow');
+ });
+ ```
+
+ Déterminer la taille de la liste et la somme des élément de la liste 
+ ```
+ //console.log($('.list-item').innerWidth())
+let listWidth = $('.list').innerWidth()
+//console.log(totalWidth)
+
+let itemWidth= 0;
+$.each($('.list-item'), function () {
+  itemWidth += $(this).innerWidth()
+})
+
+console.log(typeof $('.list').innerWidth())
+console.log(itemWidth) 
+console.log(listWidth) 
+
+ ```
+
+## 08-03-2018
+
+* fixer une height  sur un component pose probleme lors du responsive + flex, en effet, le contenu va alors sortir de son parent flex vu que le parent ne peut pas grandir ... 
+
+* Vscode: pom + u = annuler le dernier multicursor ajouté
+
+* aujourd'hui, sur RCBE on recommence a traveiller avec le reste de l'équipe (florent) pour attaquer l'intégration de RCBE , du coup en attendant que florent lance tout ce qu'il fuat on est un peu bloqué ...
+
+* coldfusion est utilisé en production, langage serveur propriétaire d'Adobe 
+  * https://fr.wikipedia.org/wiki/ColdFusion
+  * https://www.adobe.com/be_en/products/coldfusion-family.html
+  * http://coldfusionexamples.com/
+* je vais avoir besoin de docker et mysql 
+  * https://gist.github.com/nrollr/3f57fc15ded7dddddcc4e82fe137b58e
+  * le fichier "my.cnf" situé ici a /usr/local/etc/my.cnf permet de configurer mysql, on doit el faire notamment parce que certaines ancienens tables (des flags surtout), ne sont pas compatibles avec la version 5.7 installées par brew. On peut aussi définir les users et les mots de passe utilisé pour se connecter à mysql mais aussi donner des configs spécifiques 
+  ex : 
+
+  ``` 
+  [client]
+user = root
+#password = ...
+
+[mysqld]
+#sql_mode=ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
+sql_mode=NO_ENGINE_SUBSTITUTION
+bind-address=0.0.0.0
+innodb_strict_mode = 0
+max_allowed_packet=500M
+
+  ```
+
+
+
+
+
+
+### Links 
+* http://www.evotech.net/articles/testjsentities.html convert character like "|" into his value in js, css and numerical 
+
+
+## 09-03-2018
+
+* http://mmenu.frebsite.nl/
+* https://github.com/xat/airtar
+* codfusion a besoin d'un mail server, il envoie notamment les logs d'erreur etc par mail ...  ou tenter de contacter de s clients, il faut que rien ne sorte => mailcatcher ou on récupère tout, disponible a localhost:1080
+* docker est sur un autre réseau que localhost => pour qu'il puisse se connecter a la db mysql, il faut un utilisateur @% pour pourvoir se connecter dessus de l'extérieur.
+
+* Du coup, la le setup c'est ...
+  * un services mysql qui tourne 'brew services list', 'brew services mysql start', mais il start au démarrage apparemment
+  * un container avec une image de coldfusion et une image de mailcatcher qui tourne, 
+  npm run docker, /!\ j'ai du 'docker run -d -p 1080:80 -p 1025:25 --name mailcatcher tophfr/mailcatcher' parce que j'avais l'image de mail catcher mais elle "tournait pas ???" ... du coup maintennat, un simple npm run docker et c'est caisse
+  * ya du webpack en plus pour simplifier les choses, le projet est énorme, jamais vu une arborescence comme celle la, depuis que florent est la (6 ans et demi), le projet est lancé .. donc il a eu le temps de grossir, Loic et florent se sont faits 10000 utilitaires en internes pour faciliter le developpement, pour la gestion des langues, des fonctions manquantes en coldfusion, ... tres surprenant de voir qu'une parte du projet est développée pour aider a dévelooper le projet. 
+  * en fait une parite wysiwyg permet a un admin royal canin de créer du contenu pour un site, cette plateforme de wyziwyg est développée par igloo, cequi complexifie le projet un peu plus. 
+
+
+
