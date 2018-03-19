@@ -457,6 +457,8 @@ max_allowed_packet=500M
 
 * http://mmenu.frebsite.nl/
 * https://github.com/xat/airtar
+* https://www.imagemagick.org/script/index.php
+* https://gruntjs.com/getting-started
 * codfusion a besoin d'un mail server, il envoie notamment les logs d'erreur etc par mail ...  ou tenter de contacter de s clients, il faut que rien ne sorte => mailcatcher ou on récupère tout, disponible a localhost:1080
 * docker est sur un autre réseau que localhost => pour qu'il puisse se connecter a la db mysql, il faut un utilisateur @% pour pourvoir se connecter dessus de l'extérieur.
 
@@ -466,6 +468,259 @@ max_allowed_packet=500M
   npm run docker, /!\ j'ai du 'docker run -d -p 1080:80 -p 1025:25 --name mailcatcher tophfr/mailcatcher' parce que j'avais l'image de mail catcher mais elle "tournait pas ???" ... du coup maintennat, un simple npm run docker et c'est caisse
   * ya du webpack en plus pour simplifier les choses, le projet est énorme, jamais vu une arborescence comme celle la, depuis que florent est la (6 ans et demi), le projet est lancé .. donc il a eu le temps de grossir, Loic et florent se sont faits 10000 utilitaires en internes pour faciliter le developpement, pour la gestion des langues, des fonctions manquantes en coldfusion, ... tres surprenant de voir qu'une parte du projet est développée pour aider a dévelooper le projet. 
   * en fait une parite wysiwyg permet a un admin royal canin de créer du contenu pour un site, cette plateforme de wyziwyg est développée par igloo, cequi complexifie le projet un peu plus. 
+  * le repo corporate bebsite de rcbe dépend de sous-modules https://git-scm.com/book/en/v2/Git-Tools-Submodules ??? 
+
+---------------------------------------------------------------------------------------------------
+SEMAINE 5
+---------------------------------------------------------------------------------------------------
+## 12-03-2018
+
+Aujour'dhui je fais le tour des petites issues, qu'on a mis tout au long du projet en parallèle de l'intégration par florent. 
+/!\ rappel on travaille a partir de la branche "v2" de corporate-website. !!! 
+
+## 13-03-2018
+
+Fix the 'bug' sur lequel j'ai travailler 6h heier ! dont 2h avec gauthier !!! C'etait une connerie ! Justification des réparations est importante, comprendre pk ca c afonctionne et une issue sur le repo github de la librairie m'as permis de justifier ce fix un peu hacky, il fallait attendre .45s au lieu de .4s ... 
+
+Ajourd'hui grosse matinée refactoring, on attaque une deuxième "phase"  (puppyguide) et on se rend compte que certaines structures html diffèrent la ou elle ne devraient pas. Je note l'imprtance aussi accordée a se poser et juste réfléchir activement sur la suite, pour bien voir les problèmes a venir et surtout prévenir la réécriture de code, ce fléau ! En effet, l'objet du refactoring et de la réflexion qu'on a eu es essentiellement une question de pouvoir réutiliser le code écrit le plus possible en interne. Un deuxième problème est la maintenabilité de ce code, on va d'office devoir y revenir un jour du coup si c'est le bordel et qu'on a du mal a s'y retrouver apres deux heures, ce sera foutu après 2 mois on retrouvera plus rien.
+
+En général, je remarque une importance énorme accordée à la compréhension des erreurs et surtout à leur correction bien sure mais surtout à la compréhension de cette correciotn, de nouveau dans un souci de maintenabilité, si on s'est retrouvé bloqué a cause d'un bug, en revenant dessus plus tard, on ne veut pas se retrouver a nouveau coincé dessus => essentiel de bien comprendre qu'est ce qui a réglé quoi, on ne laisse pas des "fixes" miraculeux dans le code sans les commenter => pour pouvoir commenter intelligemment il faut avoir compris qu'est qui corrige quoi et dans quelle mesure.  
+
+Etonnat par rapport a ce qu'on m'avait dit ou on ne prenait pas le temps de comprendre, le temps c'est de l'argent, si ca fonctionne ca fonctionne. Ici on va "perdre du temps" à absolument tout comprendre, si on en comprend vraiment pas en général on va changer de solution. 
+
+```
+.card-style {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 5px 5px black;
+}
+
+.card-ranking {
+  @extend .card-style;
+}
+
+%box-style {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 5px 5px black;
+}
+
+.box-ranking {
+  @extend %box-style;
+}
+
+...
+.card-style, .card-ranking {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 5px 5px black;
+}
+
+.box-ranking {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 5px 5px black;
+}
+
+```  
+```
+/* une belle petite map sass */ 
+// =============================================================================
+// Ranking
+// =============================================================================
+
+/* Deps
+   ========================================================================== */
+   @import 'variables';
+
+/* Layout
+  ========================================================================== */
+.medal {
+  background: $color-light;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: relative;
+}
+
+$rank: (
+  gold: (#FFBB33, #FFEDA6, #FFDF80, #F2BA49),
+  silver: (#B6B6BF, #EDF4FA, #DADCE6, #B6B6BF),
+  bronze: (#B37E59, #FFD2B3, #F2C7AA, #B5815C)
+);
+
+/* For each key in the map, created an own class */
+@each $name, $colors in $rank {
+  $borderDarkGradient: nth($colors, 1);
+  $borderLlightGradient: nth($colors, 2);
+  $insideBg:nth($colors, 3);
+  $insideShadow: nth($colors, 4);
+
+  &.medal--#{$name} {
+    background:
+    linear-gradient(0deg, $borderDarkGradient 3%, $borderLlightGradient 100%);
+    border-radius: 50%;
+    position: relative;
+
+    &::after {
+      content: '';
+      background: $insideBg;
+      box-shadow: inset 0 1px 1px 0 $insideShadow;
+      left: 3px;
+      right: 3px;
+      top: 3px;
+      bottom: 3px;
+      border-radius: 50%;
+      position: absolute;
+    }
+  }
+}
+```
+
+
+## 13-03-2018
+* le texte a l'intérieur d'une div qui a un :after/:before qui lui meme possede un attribut bg est couvert ... la solution que j'ai trouvée est de rajouter une div qui contient le contenu a afficher et qui a un z-index de 1;
+  * https://gist.github.com/LucaRosaldi/4584913
+* fix height = nuuuuuullle ! essayer le moins possible, avec les width aussi d'ailleurs
+
+## Links
+
+* https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei permet de live reload a chaque changement dans les fichiers 
+
+* https://help.adobe.com/en_US/ColdFusion/9.0/CFMLRef/WSc3ff6d0ea77859461172e0811cbec22c24-71aa.html
+* https://helpx.adobe.com/coldfusion/cfml-reference/coldfusion-tags/tags-j-l/cfloop-looping-over-a-list-a-file-or-an-array.html
+
+un peu de coldfusion 
+```
+<cfscript>
+      data = [
+        {nickname:"luna", score:"1238"},
+        {nickname:"luna", score:"1238"},
+        {nickname:"luna", score:"1238"},
+        {nickname:"luna", score:"1238"},
+        {nickname:"luna", score:"1238"}
+      ];
+      function _getMedalClass (required numeric pos) {
+        switch(pos) {
+          case '1':
+            return 'medal--gold';
+          case '2':
+            return 'medal--silver';
+          case '3':
+            return 'medal--bronze';
+        }
+        return '';
+      }
+    </cfscript>
+<!---     <cffunction name="_getMedalClass">
+      <cfargument name="pos" type="numeric" />
+      <cfswitch expression="#pos#">
+        <cfcase value="1">
+          <cfreturn 'medal--gold'/>
+        </cfcase>
+        <cfcase value="2">
+          <cfreturn 'medal--silver'/>
+        </cfcase>
+        <cfcase value="3">
+          <cfreturn 'medal--bronze'/>
+        </cfcase>
+      </cfswitch>
+      <cfreturn '' />
+    </cffunction> --->
+    <cfset rank = 1 />
+    <cfloop array="#data#" index="row">
+      <cfoutput>
+        <div class="ranking__list__item">
+          <div class="medal #_getMedalClass(rank)#">#rank#</div>
+          <div class="ranking__list__item__nickname">#row.nickname#</div>
+          <div class="ranking__list__item__score">#row.score#</div>
+        </div>
+      </cfoutput>
+    <cfset rank++/>
+    </cfloop>
+```
+
+
+## 14-03-2018
+
+ Grosse journée aujourd'hui, pas eu le temps de bcp prendre des notes ... tout commence a venir plus naturellement et rapidement 
+ * juste remarque de loic, sur un selecteur jquery utilisant '|=', attention a toujours cibler un maximum (id étant un des bests) notamment au niveau des performances mais surtout pour éviter les sides effects qui pourrait advenir en selectionnant plus que ce qu'il ne faut 
+ * https://www.w3.org/TR/SVG/styling.html#SVGStylingProperties
+
+
+---------------------------------------------------------------------------------------------------
+SEMAINE 6
+---------------------------------------------------------------------------------------------------
+
+
+* go check gatsby bootstrap https://www.gatsbyjs.org/1
+* check npx 
+
+* git closing issues automatically https://help.github.com/articles/closing-issues-using-keywords/
+
+* https://www.alsacreations.com/astuce/lire/5-lien-precis-page-ancre-anchor-diese.html
+* https://www.alsacreations.com/article/lire/572-Les-liens-d-evitement.html
+* https://www.blog.niums.com/jquery-defilement-fluide-scroll-vers-une-id-une-ancre/
+  * https://stackoverflow.com/questions/25020582/scrolling-to-an-anchor-using-transition-css3
+* https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Fonctions/get
+
+* Aujourd'hui, evenement majeur : perdu pas mal de temsp a pas demander un truc sur lequel j'étais coincé, j'arrivais pas à trouver la doc d'un fonction get() qui est en fait du lodash https://lodash.com/docs/4.17.5#get
+* de plus, je savais pas ce qui était utilisé pour faire l'appel asynchrone et donc je savais pas  quel évènement je pouvais utiliser pour tester l'état du component react ... on utilis ene fait react-refetch https://github.com/heroku/react-refetch et donc leur équivalent au promesse pour react  les PromiseState qui ont des méthodes 'pending, rejected, ...' qui indique l'état du fetch 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
