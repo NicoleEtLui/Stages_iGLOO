@@ -667,11 +667,87 @@ SEMAINE 6
 * Aujourd'hui, evenement majeur : perdu pas mal de temsp a pas demander un truc sur lequel j'étais coincé, j'arrivais pas à trouver la doc d'un fonction get() qui est en fait du lodash https://lodash.com/docs/4.17.5#get
 * de plus, je savais pas ce qui était utilisé pour faire l'appel asynchrone et donc je savais pas  quel évènement je pouvais utiliser pour tester l'état du component react ... on utilis ene fait react-refetch https://github.com/heroku/react-refetch et donc leur équivalent au promesse pour react  les PromiseState qui ont des méthodes 'pending, rejected, ...' qui indique l'état du fetch 
 
+* a retenir: demander plus tot ! 
+* quand on sait aps si un compoentn sera reutilisé dans l'app plus loin, on le fait en local et on oublie pas qu'il est la ... 
+* se méfier de stackoverflow, pas toujours des bonnes pratiques présentes, bcp de hack ... 
+
+import React from 'react'
+import { connect } from 'react-refetch'
+import get from 'lodash/get'
+import { FormattedMessage } from 'react-intl'
+
+import Promo from './Promo'
+
+const Loading = () => <div className="loader">Loading....</div>
+
+const Promos = ({ promos }) => {
+  if (promos.pending) {
+    return <Loading />
+  }
+
+  const entries = get(promos, 'value.data', [])
+
+  return (
+    <div>
+      {entries.map((promo, i) => (
+        <Promo key={'promo_' + i} promo={promo} />
+      ))}
+      {/* TODO: loader + message if not loading */}
+      {!entries.length && <div>
+        <FormattedMessage id='no_promo' default='Aucune promotion disponible' />
+      </div>}
+    </div>
+  )
+}
+
+export default connect(({ reference }) => ({
+  promos: `/api/product-detailpagecontroller/deals?ref=${reference}`
+}))(Promos)
 
 
+## 20 mars 2018
+
+* http://easings.net/fr
+* https://www.alsacreations.com/tuto/lire/876-transitions-css3-transition-timing-function.html
+
+* https://www.mailgun.com/ ?? 
+
+* aujourd'hui je repasse apres avoir checker plein de petits trucs sur BI, avec du react et tout le merdier, loic m'a demandé de faire un truc, il l'a fait en 5 minute, j'ai aps tout compris mais je pense que j'aurais mis deux ans a faire ça tout seul ... il faut absolument que je commence a étudier un peu react ! 
+Rappel : * styled-components ! 
+  * https://mobx.js.org/ state management (//redux)
+  * 
+  * demander de cancel l'animation quand le button est disabled, suffit simplement de mettre le :hover sous condition de la props disabled 
+  => 
+
+  `${p => !p.disabled && `
+    &:hover {
+      background: ${colors.primaryDk};
+      cursor: pointer;
+      color: #fff;
+      text-decoration: none;
+  `}
+  `
+
+  * https://stackoverflow.com/questions/8981194/changing-git-commit-message-after-push-given-that-no-one-pulled-from-remote
 
 
+## 21 mars 2018
 
+* https://stackoverflow.com/questions/8910271/how-can-i-reference-a-commit-in-an-issue-comment-on-github
+* https://mobx.js.org/refguide/observable.html
+Aujourd'hui on continue sur des corrections partagées entre BI et RC_BE, travail sur la template text qui va styler ce que les admins 
+de sites ajoutent comme contenu
+* https://css-tricks.com/parent-selectors-in-css/ pk il n'y a pas de selecteur parent en css ! 
+
+## 22 mars 2018
+
+* ce matin j'ai eu la chance de participer à une masterclass à propos de cssgridlayout (offert par igloo) donné par Raphael Goetters de alsacreation.fr et organisé par la feweb  ! cette masterclass fait suite à la conférence elle aussi organisée par la feweb sur le même sujet qui a eu lieu la veille (la aussi j'ai eu la chance d'avoir ma place par igloo) ! C'etait trop bien, on était 7 eleves dans un bureau du parc athena et on a passé +- 4h (9h -> 12h45) à faire des exercices donné et corrigé par Raphael. J'étai sun peu largué par rapport aux autres présents, vieux briscard du css et plus habitué à livecoder que moi ... impressionnant a quel point on a l'air de revenir de loin en css. Ca donne envie de s'y mettre encore plus a fond et gridlayout a l'air vraiment dingue, malheureusement très peu supporté sous edge.
+* http://cssgridgarden.com/#fr
+* https://gridbyexample.com/
+* ... et beaucoup plus d'infos recues, dans les slides et dans la clé usb recue
+
+* cet aprem un peu plus calme
+*  
 
 
 
