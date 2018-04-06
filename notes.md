@@ -747,47 +747,91 @@ de sites ajoutent comme contenu
 * ... et beaucoup plus d'infos recues, dans les slides et dans la clé usb recue
 
 * cet aprem un peu plus calme
-*  
+
+
+---------------------------------------------------------------------------------------------------
+SEMAINE 7
+---------------------------------------------------------------------------------------------------
+
+## 26 mars 2018
+## 27 mars 2018
+Je continue sur la liste d'issues relevée apres le tour du site avec l'équipe sur rcbe
+* https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+* https://github.com/JedWatson/classnames
+* https://codepen.io/torbencolding/pen/PwEPBo?q=responsive+tabs+menu&limit=all&type=type-pens
+* https://developer.mozilla.org/fr/docs/Web/CSS/writing-mode
+* http://jsfiddle.net/jonathansampson/vxntq8b1/
+
+## 28 mars 2018
+il semble possible d'appliquer une transition sur fill (element svg) directement en css !!!! pas sure que ca soit supporté énormément par contre #IE
+
+* petite astuce pour centrer un élément positionné par rapport au centre de son parent 
+
+```
+<div class="un">
+</div>
+
+.un {
+  background: coral;
+  width: 100px;
+  height: 100px;
+  border-radius: 3px;
+  color: white; 
+  margin: 300px;
+  position: relative;
+}
+
+.un:after {
+  content: ':'; 
+  height: 20px;
+  width: 20px;
+  background: black;
+  text-align: center;
+  position: absolute;
+  top: -10px;
+  left: 50%; // on place le top left corner au milieu
+  transform: translateX(-50%); // on translate l'élément négativement d'une distance équivalente a la moitié de sa propre taille 
+}
+```
+
+## 29 mars 2018
+
+* aujourd'hui panne chez ovh ! 
+
+## 30 mars 2018
+* attention un a fils d'un a ca fait tout péter .... 
+According to the W3C specification for links HTML5: No.
+Content model:
+Transparent, but there must be no interactive content descendant.
+* https://www.webpagefx.com/web-design/hex-to-rgb/
+* https://embed.plnkr.co/8aKFdXxtLHn9Wrj7dTpi/
 
 
 
 
 
 
+## 3 avril 2018
+* https://www.webpagefx.com/web-design/hex-to-rgb/
+* https://css-tricks.com/different-transitions-for-hover-on-hover-off/
 
 
 
+## 2 avril 2018
+
+---------------------------------------------------------------------------------------------------
+SEMAINE 8
+---------------------------------------------------------------------------------------------------
 
 
+## 5 avril 2018
+
+* https://www.w3.org/Style/Examples/007/color-bullets.en.html#colored
 
 
+## 6 avril 2018
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+* https://css-tricks.com/what-you-should-know-about-collapsing-margins/
 
 
 
