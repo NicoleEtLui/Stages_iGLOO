@@ -832,15 +832,77 @@ SEMAINE 8
 ## 6 avril 2018
 
 * https://css-tricks.com/what-you-should-know-about-collapsing-margins/
+* https://csswizardry.com/2012/06/single-direction-margin-declarations/
+
+---------------------------------------------------------------------------------------------------
+SEMAINE 9
+---------------------------------------------------------------------------------------------------
+
+On m'a proposé de m'engager !!!!!! :D
+
+## 10 avril 2018
+
+* https://css-tricks.com/almanac/selectors/r/root/
+
+## 11 avril 2018
+
+* Le diable se cache dans les détails !!!!  
+
+---------------------------------------------------------------------------------------------------
+SEMAINE 10
+---------------------------------------------------------------------------------------------------
+
+* importnace de définir des styles de bases pour les éléments "nu" au DEBUT ! de manière générale, il vaut mieux styler en utilisant la priorité juste nécessaire afin de ne pas devoir revenir sur des styles prioritaire par la suite qui vont influencer plein d'autres choses et tout casser (l'enfer des liens et des listes sur rcbe ) 
+
+* cependant une chose a eviter est de devoir "cancel" plein de trucs, si on passe plus de style a cancel plein
+
+
+## 18 avril 2018
+
+* Aujourd'hui on fait du testing IE ... j'ai droit a browserstack !!!! RCBE doit etre en ligne d'ici 2 trois semaines dependant de leur vitesse a fournir du contenu 
+	=> compatible IE 10 et 11 avec qque chose de navigable en 9 si possible ... 
+	* svg qui on pas de width font chier ... 
+	* https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/dev-guides/hh673531(v=vs.85)
+
+* SKETCH ! pour exporter une image avec un rectangle transparent derrière, créer un symbole et exporter le symbome !!!
+
+* https://github.com/JChemPaint/jchempaint/wiki/The-svg-font-problem-and-its-solution
 
 
 
+## 19 avril 2018
+
+* https://stackoverflow.com/questions/16808815/ie10-flexbox-p-element-non-wrapping IE 10 c'est vraiment bien :ok_hand: 
+
+## 20 avril 2018
+pour styler un input de manière stylée (comme un boutton, etc ...) on le display none et on style son label !!! 
+
+* Quelque chose a peter dans qque part dans le nginx il semblerait, bref on recoit pleind 'alertes de services de client down, étonné de voir le calme avec laquelle l'équipe prend les choses en main et les smileys partou dans les messages d'erreurs
+
+* TJS COMPRENDRE PK CA MArCHE PAS !!!!!! AGIR SUR QQUE CHOSE QU'ON NE COMPREND PAS C'EST SURE A 1000000% que dasn le meilleur des cas on repassera dessus plus tard, dans le pire des cas on laisse des trucs déguelasses et branlant en place ... 
 
 
+---------------------------------------------------------------------------------------------------
+SEMAINE 11
+---------------------------------------------------------------------------------------------------
+
+*  https://jsonplaceholder.typicode.com/
+
+* 'unset' ne fonctionne pas sur ie11 => 'auto' c'est mieux, de manière générale si on doit mettre unset qque part ca doit etre end ernier recours (on a pas la main sur le style au dessus), il ne devrait pas falloi annuler des styles sans les remplaces par qque chose. 
 
 
+---------------------------------------------------------------------------------------------------
+SEMAINE 12
+---------------------------------------------------------------------------------------------------
 
+## 2 mai 2018
 
+* aujourd'hui je commence une app react "quasi" from scratch, catalogue produit rationnement 
+	* probleme de contexte, en js, petite explication sur call/apply/bind et fat arrows #this !!!
+	* pas mettre de Component directement dans un state
 
+---------------------------------------------------------------------------------------------------
+SEMAINE 13
+---------------------------------------------------------------------------------------------------
 
-
+* Des qu'one st en react on oublie jquery !!!!!!!!!!!!! en modifiant le dom on risque de désynchroniser le dom et le dom virtuel géré par react, on utilise des state ! 
