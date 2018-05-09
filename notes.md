@@ -2,9 +2,8 @@ Outils :
 * mail (mail.igloo.be)
 * slack
 * gitlab gitlab.igloo.be
-* invision https://projects.invisionapp.com/d/main/default/#/console/9945455/269996300/inspect
-* sourcetree
-* teamwork https://igloowebstudio.teamworkpm.net/index.cfm#projects/48083/tasks + teamwork timer
+* invision 
+* teamwork + teamwork timer
 
 
 
