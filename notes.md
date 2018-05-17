@@ -905,3 +905,20 @@ SEMAINE 13
 ---------------------------------------------------------------------------------------------------
 
 * Des qu'one st en react on oublie jquery !!!!!!!!!!!!! en modifiant le dom on risque de désynchroniser le dom et le dom virtuel géré par react, on utilise des state ! 
+
+---------------------------------------------------------------------------------------------------
+SEMAINE 14
+---------------------------------------------------------------------------------------------------
+
+* http://www.sumnoise.com/2016/04/06/equal-width-flexbox-columns/
+* http://gedd.ski/post/the-difference-between-width-and-flex-basis/
+* https://flexboxzombies.com/p/flexbox-zombies
+
+
+Je travaille sur des petits fix dans un projet de CMS en React + antd
+* https://momentjs.com/
+
+
+* check semver (semantic versioning) https://semver.org/
+* https://surge.sh/
+* https://www.gatsbyjs.org/
